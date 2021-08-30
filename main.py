@@ -26,7 +26,13 @@ while not game_over:
     screen.update()
 
     if ball.ycor() > 280 or ball.ycor() < -280:
-        ball.bounce()
+        ball.bounce_edge()
+
+    if ball.distance(r_paddle) < 50 and ball.xcor() > 320 or ball.distance(l_paddle) < 50 and ball.xcor() < -320:
+        ball.bounce_paddle()
+
+    if ball.xcor() > 380 or ball.xcor() < -380:
+        ball.restart()
 
     ball.move()
 
