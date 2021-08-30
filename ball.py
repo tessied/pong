@@ -11,7 +11,6 @@ class Ball(Turtle):
         self.change_in_x = 10
         self.change_in_y = 10
 
-
     def move(self):
         self.setx(self.xcor() + self.change_in_x)
         self.sety(self.ycor() + self.change_in_y)
