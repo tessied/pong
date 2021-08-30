@@ -15,16 +15,20 @@ l_paddle = Paddle((-350, 0))
 ball = Ball()
 
 screen.listen()
+screen.onkey(r_paddle.move_up, "Up")
+screen.onkey(r_paddle.move_down, "Down")
+screen.onkey(l_paddle.move_up, "w")
+screen.onkey(l_paddle.move_down, "s")
 
 game_over = False
 while not game_over:
     time.sleep(0.1)
     screen.update()
-    screen.onkey(r_paddle.move_up, "Up")
-    screen.onkey(r_paddle.move_down, "Down")
-    screen.onkey(l_paddle.move_up, "w")
-    screen.onkey(l_paddle.move_down, "s")
+
+    if ball.ycor() > 280 or ball.ycor() < -280:
+        ball.bounce()
 
     ball.move()
+
 
 screen.exitonclick()
