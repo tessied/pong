@@ -23,7 +23,7 @@ screen.onkey(l_paddle.move_down, "s")
 
 game_over = False
 while not game_over:
-    time.sleep(0.1)
+    time.sleep(ball.move_speed)
     screen.update()
 
     if ball.ycor() > 280 or ball.ycor() < -280:
